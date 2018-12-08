@@ -1,0 +1,26 @@
+body{
+    background-color:blanchedalmond;
+}
+h1{
+    text-align: center;
+}
+div nav{
+    align-items: center;
+}
+#cep{
+}
+#ecrivez{
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}
+#button{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+}
+
+#button p{ 
+    text-align: center;
+    width: 100%;
+}

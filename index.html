@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+    <script
+    src="https://code.jquery.com/jquery-2.2.4.js"
+    integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id=nav>
+        <a href="home.html" target="_self">HOME</a>
+        <a href="quem somos.html" target="_self">QUEM SOMOS</a>
+        <a href="nossa equipe.html" target="_self">NOSSA EQUIPE</a>
+        <a href="sua avialiação.html" target="_self">SUA AVALIAÇÃO</a>
+    </div>
+    <h1>NOSSA AJUDA DOS BAIRROS</h1>
+    <div id="ecrivez">
+        <h2>digita o seu cep</h2>
+    <input type="text" id="cep">
+    </div>
+    <div id=button>
+            <p>INFORME A SITUAÇÃO DO SEU BAIRRO EM 1 MINUTO PROTEJA E SALVA VIDAS SEM COMPROMISSO</p>
+    <button id="button">ADICIONE UMA INFORMÇÃO </button>
+    </div>
+    
+</body>
+
+<script>
+        $('#busca-cep').click(function(){
+            let cep = $('#cep').val();
+                $('#dados-cep').fadeIn();
+                 $.get('http://viacep.com.br/ws/'+cep+'/json',
+        function(retorno_viacep){
+            $('#dados-cep-cep').html(retorno_viacep.cep);
+            $('#dados-cep-uf').html(retorno_viacep.uf);
+            $('#dados-cep-cidade').html(retorno_viacep.localidade);
+            $('#dados-cep-bairro').html(retorno_viacep.bairro);
+            $('#dados-cep-rua').html(retorno_viacep.logradouro);
+            $('#dados-cep').fadeIn();
+     
+            }); 
+      });
+    
+</script>    
+</html>
